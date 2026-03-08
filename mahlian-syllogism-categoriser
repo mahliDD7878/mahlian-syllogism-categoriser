@@ -146,7 +146,7 @@ def figureThree(major_term, minor_term, middle_term):
         print(f'''
               {major_premise}
               {minor_premise}
-              Some {major_term} are not {minor_term}.''')
+              Some {minor_term} are not {major_term}.''')
         return major_premise, minor_premise
     
     return major_term, minor_term, middle_term
