@@ -1,19 +1,11 @@
-'''
-code written by mahli7878 on discord o algo
-new to programming so might be shite
-no if-then syllogisms or disjunctive for now
-emilio is a goy
-'''
 
 major_term = input("what is the major term? ")
 minor_term = input("what is the minor term? ")
 middle_term = input("what is the middle term? ")
 
-mood = input("Enter the mood (e.g. AAA, EAE, AII, EIO): ").upper()
-print(mood)
-
 def figureOne(major_term, minor_term, middle_term):
     valid_moods = ["AAA", "EAE", "AII", "EIO"]
+    mood = input(f"what is the mood? {valid_moods} ").upper()
     if mood not in valid_moods:
         print("Invalid mood.")
 
@@ -28,7 +20,7 @@ def figureOne(major_term, minor_term, middle_term):
     
     elif mood == valid_moods[1]:
         major_premise = f"No {middle_term} are {major_term}."
-        minor_premise = f"All {minor_term} are {middle_term}."
+        minor_premise = f"All {middle_term} are {minor_term}."
         print(f'''
               {major_premise}
               {minor_premise}
@@ -46,15 +38,16 @@ def figureOne(major_term, minor_term, middle_term):
     
     elif mood == valid_moods[3]:
         major_premise = f"No {middle_term} are {major_term}."
-        minor_premise = f"Some {minor_term} are {middle_term}."
+        minor_premise = f"Some {middle_term} are {minor_term}."
         print(f'''
               {major_premise}
               {minor_premise}
-              Some {minor_term} are not {major_term}.''')
+              Some {minor_term} are {major_term}.''')
         return major_premise, minor_premise
     
 def figureTwo(major_term, minor_term, middle_term):
     valid_moods = ["EAE", "AEE", "EIO", "AOO"]
+    mood = input(f"what is the mood? {valid_moods} ").upper()
     if mood not in valid_moods:
         print("Invalid mood.")
     
@@ -82,7 +75,7 @@ def figureTwo(major_term, minor_term, middle_term):
         print(f'''
               {major_premise}
               {minor_premise}
-              Some {minor_term} are not {major_term}.''')
+              Some {minor_term} are {major_term}.''')
         return major_premise, minor_premise
 
     elif mood == valid_moods[3]:
@@ -98,6 +91,7 @@ def figureTwo(major_term, minor_term, middle_term):
 
 def figureThree(major_term, minor_term, middle_term):
     valid_moods = ["AAI", "AII", "IAI", "EAO", "OAO", "EIO"]
+    mood = input(f"what is the mood? {valid_moods} ").upper()
     if mood not in valid_moods:
         print("Invalid mood.")
     
@@ -152,10 +146,11 @@ def figureThree(major_term, minor_term, middle_term):
         print(f'''
               {major_premise}
               {minor_premise}
-              Some {minor_term} are not {major_term}.''')
+              Some {major_term} are not {minor_term}.''')
         return major_premise, minor_premise
     
     return major_term, minor_term, middle_term
+
 
 ask_figure = input("which figure do you want to use? 1, 2, 3? ")
 if ask_figure == "1":
